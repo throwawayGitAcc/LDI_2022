@@ -1,0 +1,91 @@
+CONJECTUREPANEL "Wykład 2"
+PROOF "actual j, ∀x.R(x) ⊢ ∃y.R(y)"
+INFER actual j,
+     ∀x.R(x)
+     ⊢ ∃y.R(y)
+FORMULAE
+0 actual j,
+1 R(j),
+2 R(y),
+3 j,
+4 y,
+5 ∃y.R(y),
+6 ∀x.R(x),
+7 R(x),
+8 x 
+IS
+SEQ (cut[B,C\1,5]) ("∀ elim"[P,i,x\7,3,8]) (hyp[A\6]) (hyp[A\0]) (cut[B,C\1,5]) (hyp[A\1]) ("∃ intro"[P,i,x\2,3,4]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Wykład 2"
+PROOF "∀x.(P(x)→R(x)), ∀y.P(y) ⊢ ∀z.R(z)"
+INFER ∀x.(P(x)→R(x)),
+     ∀y.P(y)
+     ⊢ ∀z.R(z)
+FORMULAE
+0 R(i),
+1 P(i),
+2 P(i)→R(i),
+3 actual i,
+4 ∀x.(P(x)→R(x)),
+5 P(x)→R(x),
+6 i,
+7 x,
+8 ∀y.P(y),
+9 P(y),
+10 y,
+11 R(z),
+12 z,
+13 ∀x.(P(x)→R(x))
+IS
+SEQ ("∀ intro"[i,P,x\6,11,12]) (cut[B,C\1,0]) ("∀ elim"[P,i,x\9,6,10]) (hyp[A\8]) (hyp[A\3]) (cut[B,C\2,0]) ("∀ elim"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("→ elim"[A,B\1,0]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Wykład 2"
+PROOF "∀x.(R(x)→S(x)), ∃y.R(y) ⊢ ∃z.S(z)"
+INFER ∀x.(R(x)→S(x)),
+     ∃y.R(y)
+     ⊢ ∃z.S(z)
+FORMULAE
+0 actual i,
+1 S(i),
+2 S(z),
+3 i,
+4 z,
+5 ∃z.S(z),
+6 R(i),
+7 R(i)→S(i),
+8 ∀x.(R(x)→S(x)),
+9 R(x)→S(x),
+10 x,
+11 ∃y.R(y),
+12 R(y),
+13 y,
+14 ∀x.(R(x)→S(x))
+IS
+SEQ ("∃ elim"[i,C,P,x\3,5,12,13]) (hyp[A\11]) (cut[B,C\7,5]) ("∀ elim"[P,i,x\9,3,10]) (hyp[A\8]) (hyp[A\0]) (cut[B,C\1,5]) ("→ elim"[A,B\6,1]) (hyp[A\7]) (hyp[A\6]) (cut[B,C\1,5]) (hyp[A\1]) ("∃ intro"[P,i,x\2,3,4]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Wykład 2"
+PROOF "∃y.P(y), ∀x.∀y.(P(x)→R(y)) ⊢ ∀y.R(y)"
+INFER ∃y.P(y),
+     ∀x.∀y.(P(x)→R(y))
+     ⊢ ∀y.R(y)
+FORMULAE
+0 R(i),
+1 P(i1),
+2 P(i1)→R(i),
+3 actual i,
+4 ∀y.(P(i1)→R(y)),
+5 P(i1)→R(y),
+6 i,
+7 y,
+8 actual i1,
+9 ∀x.∀y.(P(x)→R(y)),
+10 ∀y.(P(x)→R(y)),
+11 i1,
+12 x,
+13 ∀y.(P(i1)→R(y)),
+14 ∃y.P(y),
+15 P(y),
+16 R(y)
+IS
+SEQ ("∀ intro"[i,P,x\6,16,7]) ("∃ elim"[i,C,P,x\11,0,15,7]) (hyp[A\14]) (cut[B,C\13,0]) ("∀ elim"[P,i,x\10,11,12]) (hyp[A\9]) (hyp[A\8]) (cut[B,C\2,0]) ("∀ elim"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("→ elim"[A,B\1,0]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END

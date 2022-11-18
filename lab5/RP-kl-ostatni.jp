@@ -1,0 +1,78 @@
+﻿CONJECTUREPANEL "Rachunek predykatów, ostatni slajd, klasycznie"
+PROOF "∀x.(R∨P(x)) ⊢ R∨∀x.P(x)"
+WHERE x NOTIN R 
+INFER ∀x.(R∨P(x))
+     ⊢ R∨∀x.P(x)
+FORMULAE
+0 ⊥,
+1 ¬(R∨∀x.P(x)),
+2 R∨∀x.P(x),
+3 ∀x.P(x),
+4 R,
+5 P(i),
+6 R∨P(i),
+7 actual i,
+8 ∀x.(R∨P(x)),
+9 R∨P(x),
+10 i,
+11 x,
+12 P(x),
+13 ∀x.(R∨P(x))
+IS
+SEQ ("contra (classical)"[A\2]) (cut[B,C\3,0]) ("∀ intro"[i,P,x\10,12,11]) (cut[B,C\6,5]) ("∀ elim"[P,i,x\9,10,11]) (hyp[A\8]) (hyp[A\7]) ("∨ elim"[A,B,C\4,5,5]) (hyp[A\6]) (cut[B,C\2,5]) (LAYOUT "∨ intro" (0) ("∨ intro(L)"[B,A\3,4]) (hyp[A\4])) (cut[B,C\0,5]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) ("contra (constructive)"[B\5]) (hyp[A\0]) (hyp[A\5]) (cut[B,C\2,0]) (LAYOUT "∨ intro" (0) ("∨ intro(R)"[B,A\4,3]) (hyp[A\3])) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, ostatni slajd, klasycznie"
+PROOF "actual i, ∀x.P(x)→R ⊢ ∃x.(P(x)→R)"
+WHERE x NOTIN R 
+INFER actual i,
+     ∀x.P(x)→R 
+     ⊢ ∃x.(P(x)→R)
+FORMULAE
+0 ⊥,
+1 ¬∃x.(P(x)→R),
+2 ∃x.(P(x)→R),
+3 actual i,
+4 P(i)→R,
+5 P(x)→R,
+6 i,
+7 x,
+8 R,
+9 ∀x.P(x),
+10 ∀x.P(x)→R,
+11 actual i1,
+12 P(i1)→R,
+13 i1,
+14 ¬P(i1),
+15 P(i1),
+16 P(x),
+17 P(i)
+IS
+SEQ ("contra (classical)"[A\2]) (cut[B,C\4,0]) ("→ intro"[A,B\17,8]) (cut[B,C\9,8]) ("∀ intro"[i,P,x\13,16,7]) ("contra (classical)"[A\15]) (cut[B,C\12,0]) ("→ intro"[A,B\15,8]) (cut[B,C\0,8]) ("¬ elim"[B\15]) (hyp[A\15]) (hyp[A\14]) ("contra (constructive)"[B\8]) (hyp[A\0]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,13,7]) (hyp[A\12]) (hyp[A\11]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0]) (cut[B,C\8,8]) ("→ elim"[A,B\9,8]) (hyp[A\10]) (hyp[A\9]) (hyp[A\8]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, ostatni slajd, klasycznie"
+PROOF "actual i, R→∃x.P(x) ⊢ ∃x.(R→P(x))"
+WHERE x NOTIN R 
+INFER actual i,
+     R→∃x.P(x)
+     ⊢ ∃x.(R→P(x))
+FORMULAE
+0 ⊥,
+1 ¬∃x.(R→P(x)),
+2 ∃x.(R→P(x)),
+3 actual i,
+4 R→P(i),
+5 R→P(x),
+6 i,
+7 x,
+8 P(i),
+9 actual i1,
+10 R→P(i1),
+11 i1,
+12 P(i1),
+13 R,
+14 ∃x.P(x),
+15 P(x),
+16 R→∃x.P(x)
+IS
+SEQ ("contra (classical)"[A\2]) (cut[B,C\4,0]) ("→ intro"[A,B\13,8]) (cut[B,C\14,8]) ("→ elim"[A,B\13,14]) (hyp[A\16]) (hyp[A\13]) ("∃ elim"[i,C,P,x\11,8,15,7]) (hyp[A\14]) (cut[B,C\10,8]) ("→ intro"[A,B\13,12]) (hyp[A\12]) (cut[B,C\2,8]) ("∃ intro"[P,i,x\5,11,7]) (hyp[A\10]) (hyp[A\9]) (cut[B,C\0,8]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) ("contra (constructive)"[B\8]) (hyp[A\0]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END

@@ -1,0 +1,87 @@
+﻿CONJECTUREPANEL "Rachunek predykatów, zamiana kwantyfikatorów"
+PROOF "actual j, ∀z.∃x.(S(x)∨R(z)) ⊢ ∃x.∀z.(S(x)∨R(z))"
+INFER actual j,
+     ∀z.∃x.(S(x)∨R(z))
+     ⊢ ∃x.∀z.(S(x)∨R(z))
+FORMULAE
+0 ⊥,
+1 ¬∃x.∀z.(S(x)∨R(z)),
+2 ∃x.∀z.(S(x)∨R(z)),
+3 actual i,
+4 ∀z.(S(i)∨R(z)),
+5 ∀z.(S(x)∨R(z)),
+6 i,
+7 x,
+8 R(i2),
+9 S(i),
+10 S(i)∨R(i2),
+11 actual i3,
+12 ∀z.(S(i3)∨R(z)),
+13 i3,
+14 S(i3),
+15 R(i4),
+16 i4,
+17 S(i3)∨R(z),
+18 z,
+19 S(i3)∨R(i2),
+20 ∃x.(S(x)∨R(i2)),
+21 S(x)∨R(i2),
+22 actual i2,
+23 ∀z.∃x.(S(x)∨R(z)),
+24 ∃x.(S(x)∨R(z)),
+25 i2,
+26 ∃x.(S(x)∨R(i2)),
+27 S(i)∨R(z),
+28 R(i1),
+29 i1,
+30 S(i)∨R(j),
+31 R(j),
+32 ∃x.(S(x)∨R(j)),
+33 S(x)∨R(j),
+34 actual j,
+35 j,
+36 ∃x.(S(x)∨R(j)),
+37 actual i1,
+38 actual i4 
+IS
+SEQ (cut[B,C\36,2]) ("∀ elim"[P,i,x\24,35,18]) (hyp[A\23]) (hyp[A\34]) ("contra (classical)"[A\2]) ("∃ elim"[i,C,P,x\6,0,33,7]) (hyp[A\32]) (cut[B,C\4,0]) ("∨ elim"[A,B,C\9,31,4]) (hyp[A\30]) ("∀ intro"[i,P,x\29,27,18]) (LAYOUT "∨ intro" (0) ("∨ intro(L)"[B,A\28,9]) (hyp[A\9])) ("∀ intro"[i,P,x\25,27,18]) (cut[B,C\26,10]) ("∀ elim"[P,i,x\24,25,18]) (hyp[A\23]) (hyp[A\22]) ("∃ elim"[i,C,P,x\13,10,21,7]) (hyp[A\20]) ("∨ elim"[A,B,C\14,8,10]) (hyp[A\19]) (cut[B,C\12,10]) ("∀ intro"[i,P,x\16,17,18]) (LAYOUT "∨ intro" (0) ("∨ intro(L)"[B,A\15,14]) (hyp[A\14])) (cut[B,C\2,10]) ("∃ intro"[P,i,x\5,13,7]) (hyp[A\12]) (hyp[A\11]) (cut[B,C\0,10]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) ("contra (constructive)"[B\10]) (hyp[A\0]) (LAYOUT "∨ intro" (0) ("∨ intro(R)"[B,A\9,8]) (hyp[A\8])) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, zamiana kwantyfikatorów"
+PROOF "actual j, ∀z.∃x.(S(x)→R(z)) ⊢ ∃x.∀z.(S(x)→R(z))"
+INFER actual j,
+     ∀z.∃x.(S(x)→R(z))
+     ⊢ ∃x.∀z.(S(x)→R(z))
+FORMULAE
+0 ⊥,
+1 ¬∃x.∀z.(S(x)→R(z)),
+2 ∃x.∀z.(S(x)→R(z)),
+3 actual j,
+4 ∀z.(S(j)→R(z)),
+5 ∀z.(S(x)→R(z)),
+6 j,
+7 x,
+8 R(i),
+9 S(i1),
+10 S(i1)→R(i),
+11 actual i1,
+12 ∀z.(S(i1)→R(z)),
+13 i1,
+14 R(i2),
+15 ¬S(i1),
+16 i2,
+17 S(i1)→R(z),
+18 z,
+19 ∃x.(S(x)→R(i)),
+20 S(x)→R(i),
+21 S(j),
+22 actual i,
+23 ∀z.∃x.(S(x)→R(z)),
+24 ∃x.(S(x)→R(z)),
+25 i,
+26 ∃x.(S(x)→R(i)),
+27 S(j)→R(i),
+28 S(j)→R(z),
+29 actual i2 
+IS
+SEQ ("contra (classical)"[A\2]) (cut[B,C\4,0]) ("∀ intro"[i,P,x\25,28,18]) (cut[B,C\26,27]) ("∀ elim"[P,i,x\24,25,18]) (hyp[A\23]) (hyp[A\22]) ("→ intro"[A,B\21,8]) ("∃ elim"[i,C,P,x\13,8,20,7]) (hyp[A\19]) (cut[B,C\9,8]) ("contra (classical)"[A\9]) (cut[B,C\12,0]) ("∀ intro"[i,P,x\16,17,18]) ("→ intro"[A,B\9,14]) (cut[B,C\0,14]) ("¬ elim"[B\9]) (hyp[A\9]) (hyp[A\15]) ("contra (constructive)"[B\14]) (hyp[A\0]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,13,7]) (hyp[A\12]) (hyp[A\11]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0]) (cut[B,C\8,8]) ("→ elim"[A,B\9,8]) (hyp[A\10]) (hyp[A\9]) (hyp[A\8]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END

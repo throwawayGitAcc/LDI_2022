@@ -1,0 +1,17 @@
+﻿CONJECTUREPANEL inne
+PROOF "(P∨R)→S ⊢ (P→S)∧(R→S)"
+INFER (P∨R)→S 
+     ⊢ (P→S)∧(R→S)
+FORMULAE
+0 R→S,
+1 P→S,
+2 S,
+3 P∨R,
+4 P∨R→S,
+5 R,
+6 P,
+7 (P→S)∧(R→S),
+8 (P∨R)→S 
+IS
+SEQ (cut[B,C\1,7]) ("→ intro"[A,B\6,2]) (cut[B,C\3,2]) (LAYOUT "∨ intro" (0) ("∨ intro(L)"[B,A\5,6]) (hyp[A\6])) (cut[B,C\2,2]) ("→ elim"[A,B\3,2]) (hyp[A\4]) (hyp[A\3]) (hyp[A\2]) (cut[B,C\0,7]) ("→ intro"[A,B\5,2]) (cut[B,C\3,2]) (LAYOUT "∨ intro" (0) ("∨ intro(R)"[B,A\6,5]) (hyp[A\5])) (cut[B,C\2,2]) ("→ elim"[A,B\3,2]) (hyp[A\4]) (hyp[A\3]) (hyp[A\2]) ("∧ intro"[A,B\1,0]) (hyp[A\1]) (hyp[A\0])
+END

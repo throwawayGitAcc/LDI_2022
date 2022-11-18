@@ -1,0 +1,138 @@
+﻿CONJECTUREPANEL "Rachunek predykatów, ostatni slajd"
+PROOF "∀x.R(x)∧∀x.P(x) ⊢ ∀x.(R(x)∧P(x))"
+INFER ∀x.R(x)∧∀x.P(x)
+     ⊢ ∀x.(R(x)∧P(x))
+FORMULAE
+0 P(i),
+1 R(i),
+2 actual i,
+3 ∀x.P(x),
+4 P(x),
+5 i,
+6 x,
+7 R(i)∧P(i),
+8 ∀x.R(x),
+9 R(x),
+10 R(x)∧P(x),
+11 ∀x.R(x)∧∀x.P(x),
+12 ∀x.(R(x)∧P(x))
+IS
+SEQ (cut[B,C\3,12]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\8,3]) (hyp[A\11])) (cut[B,C\8,12]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\8,3]) (hyp[A\11])) ("∀ intro"[i,P,x\5,10,6]) (cut[B,C\1,7]) ("∀ elim"[P,i,x\9,5,6]) (hyp[A\8]) (hyp[A\2]) (cut[B,C\0,7]) ("∀ elim"[P,i,x\4,5,6]) (hyp[A\3]) (hyp[A\2]) ("∧ intro"[A,B\1,0]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, ostatni slajd"
+PROOF "∃x.(R(x)∧P(x)) ⊢ ∃x.R(x)∧∃x.P(x)"
+INFER ∃x.(R(x)∧P(x))
+     ⊢ ∃x.R(x)∧∃x.P(x)
+FORMULAE
+0 ∃x.P(x),
+1 ∃x.R(x),
+2 actual i,
+3 P(i),
+4 P(x),
+5 i,
+6 x,
+7 ∃x.R(x)∧∃x.P(x),
+8 R(i),
+9 R(x),
+10 R(i)∧P(i),
+11 ∃x.(R(x)∧P(x)),
+12 R(x)∧P(x),
+13 ∃x.(R(x)∧P(x))
+IS
+SEQ ("∃ elim"[i,C,P,x\5,7,12,6]) (hyp[A\11]) (cut[B,C\3,7]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\8,3]) (hyp[A\10])) (cut[B,C\8,7]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\8,3]) (hyp[A\10])) (cut[B,C\8,7]) (hyp[A\8]) (cut[B,C\1,7]) ("∃ intro"[P,i,x\9,5,6]) (hyp[A\8]) (hyp[A\2]) (cut[B,C\3,7]) (hyp[A\3]) (cut[B,C\0,7]) ("∃ intro"[P,i,x\4,5,6]) (hyp[A\3]) (hyp[A\2]) ("∧ intro"[A,B\1,0]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, ostatni slajd"
+PROOF "∃x.R(x)∨∃x.P(x) ⊢ ∃x.(R(x)∨P(x))"
+INFER ∃x.R(x)∨∃x.P(x)
+     ⊢ ∃x.(R(x)∨P(x))
+FORMULAE
+0 actual i1,
+1 R(i1)∨P(i1),
+2 R(x)∨P(x),
+3 i1,
+4 x,
+5 P(i1),
+6 R(i1),
+7 ∃x.(R(x)∨P(x)),
+8 ∃x.P(x),
+9 P(x),
+10 actual i,
+11 R(i)∨P(i),
+12 i,
+13 R(i),
+14 P(i),
+15 ∃x.R(x),
+16 R(x),
+17 ∃x.R(x)∨∃x.P(x)
+IS
+SEQ ("∨ elim"[A,B,C\15,8,7]) (hyp[A\17]) ("∃ elim"[i,C,P,x\12,7,16,4]) (hyp[A\15]) (cut[B,C\11,7]) (LAYOUT "∨ intro" (0) ("∨ intro(L)"[B,A\14,13]) (hyp[A\13])) ("∃ intro"[P,i,x\2,12,4]) (hyp[A\11]) (hyp[A\10]) ("∃ elim"[i,C,P,x\3,7,9,4]) (hyp[A\8]) (cut[B,C\1,7]) (LAYOUT "∨ intro" (0) ("∨ intro(R)"[B,A\6,5]) (hyp[A\5])) ("∃ intro"[P,i,x\2,3,4]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, ostatni slajd"
+PROOF "∃x.(R(x)∨P(x)) ⊢ ∃x.R(x)∨∃x.P(x)"
+INFER ∃x.(R(x)∨P(x))
+     ⊢ ∃x.R(x)∨∃x.P(x)
+FORMULAE
+0 ∃x.P(x),
+1 ∃x.R(x),
+2 actual i,
+3 P(i),
+4 P(x),
+5 i,
+6 x,
+7 ∃x.R(x)∨∃x.P(x),
+8 R(i),
+9 R(x),
+10 R(i)∨P(i),
+11 ∃x.(R(x)∨P(x)),
+12 R(x)∨P(x),
+13 ∃x.(R(x)∨P(x))
+IS
+SEQ ("∃ elim"[i,C,P,x\5,7,12,6]) (hyp[A\11]) ("∨ elim"[A,B,C\8,3,7]) (hyp[A\10]) (cut[B,C\8,7]) (hyp[A\8]) (cut[B,C\1,7]) ("∃ intro"[P,i,x\9,5,6]) (hyp[A\8]) (hyp[A\2]) (LAYOUT "∨ intro" (0) ("∨ intro(L)"[B,A\0,1]) (hyp[A\1])) (cut[B,C\3,7]) (hyp[A\3]) (cut[B,C\0,7]) ("∃ intro"[P,i,x\4,5,6]) (hyp[A\3]) (hyp[A\2]) (LAYOUT "∨ intro" (0) ("∨ intro(R)"[B,A\1,0]) (hyp[A\0]))
+END
+CONJECTUREPANEL "Rachunek predykatów, ostatni slajd"
+PROOF "∀x.R(x)∨∀x.P(x) ⊢ ∀x.(R(x)∨P(x))"
+INFER ∀x.R(x)∨∀x.P(x)
+     ⊢ ∀x.(R(x)∨P(x))
+FORMULAE
+0 P(i),
+1 R(i),
+2 actual i,
+3 ∀x.P(x),
+4 P(x),
+5 i,
+6 x,
+7 R(i)∨P(i),
+8 ∀x.R(x),
+9 R(x),
+10 ∀x.R(x)∨∀x.P(x),
+11 R(x)∨P(x)
+IS
+SEQ ("∀ intro"[i,P,x\5,11,6]) ("∨ elim"[A,B,C\8,3,7]) (hyp[A\10]) (cut[B,C\1,7]) ("∀ elim"[P,i,x\9,5,6]) (hyp[A\8]) (hyp[A\2]) (LAYOUT "∨ intro" (0) ("∨ intro(L)"[B,A\0,1]) (hyp[A\1])) (cut[B,C\0,7]) ("∀ elim"[P,i,x\4,5,6]) (hyp[A\3]) (hyp[A\2]) (LAYOUT "∨ intro" (0) ("∨ intro(R)"[B,A\1,0]) (hyp[A\0]))
+END
+CONJECTUREPANEL "Rachunek predykatów, ostatni slajd"
+PROOF "∀x.(R(x)∧P(x)) ⊢ ∀x.R(x)∧∀x.P(x)"
+INFER ∀x.(R(x)∧P(x))
+     ⊢ ∀x.R(x)∧∀x.P(x)
+FORMULAE
+0 ∀x.P(x),
+1 ∀x.R(x),
+2 P(i),
+3 R(i)∧P(i),
+4 R(i),
+5 actual i,
+6 ∀x.(R(x)∧P(x)),
+7 R(x)∧P(x),
+8 i,
+9 x,
+10 P(x),
+11 ∀x.R(x)∧∀x.P(x),
+12 R(i1),
+13 R(i1)∧P(i1),
+14 P(i1),
+15 actual i1,
+16 i1,
+17 R(x),
+18 ∀x.(R(x)∧P(x))
+IS
+SEQ (cut[B,C\1,11]) ("∀ intro"[i,P,x\16,17,9]) (cut[B,C\13,12]) ("∀ elim"[P,i,x\7,16,9]) (hyp[A\6]) (hyp[A\15]) (cut[B,C\12,12]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\12,14]) (hyp[A\13])) (hyp[A\12]) (cut[B,C\0,11]) ("∀ intro"[i,P,x\8,10,9]) (cut[B,C\3,2]) ("∀ elim"[P,i,x\7,8,9]) (hyp[A\6]) (hyp[A\5]) (cut[B,C\2,2]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\4,2]) (hyp[A\3])) (hyp[A\2]) ("∧ intro"[A,B\1,0]) (hyp[A\1]) (hyp[A\0])
+END

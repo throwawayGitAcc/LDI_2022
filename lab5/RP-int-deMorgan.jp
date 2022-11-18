@@ -1,0 +1,53 @@
+﻿CONJECTUREPANEL "Rachunek predykatów, prawa de Morgana intuicjonistycznie"
+PROOF "∀x.¬R(x) ⊢ ¬∃x.R(x)"
+INFER ∀x.¬R(x)
+     ⊢ ¬∃x.R(x)
+FORMULAE
+0 ⊥,
+1 ¬R(i),
+2 R(i),
+3 actual i,
+4 ∀x.¬R(x),
+5 ¬R(x),
+6 i,
+7 x,
+8 ∃x.R(x),
+9 R(x)
+IS
+SEQ ("¬ intro"[A\8]) ("∃ elim"[i,C,P,x\6,0,9,7]) (hyp[A\8]) (cut[B,C\1,0]) ("∀ elim"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, prawa de Morgana intuicjonistycznie"
+PROOF "¬∃x.R(x) ⊢ ∀x.¬R(x)"
+INFER ¬∃x.R(x)
+     ⊢ ∀x.¬R(x)
+FORMULAE
+0 ⊥,
+1 ¬∃x.R(x),
+2 ∃x.R(x),
+3 actual i,
+4 R(i),
+5 R(x),
+6 i,
+7 x,
+8 ¬R(x)
+IS
+SEQ ("∀ intro"[i,P,x\6,8,7]) ("¬ intro"[A\4]) (cut[B,C\4,0]) (hyp[A\4]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, prawa de Morgana intuicjonistycznie"
+PROOF "∃x.¬R(x) ⊢ ¬∀x.R(x)"
+INFER ∃x.¬R(x)
+     ⊢ ¬∀x.R(x)
+FORMULAE
+0 ⊥,
+1 ¬R(i),
+2 R(i),
+3 actual i,
+4 ∀x.R(x),
+5 R(x),
+6 i,
+7 x,
+8 ∃x.¬R(x),
+9 ¬R(x)
+IS
+SEQ ("¬ intro"[A\4]) ("∃ elim"[i,C,P,x\6,0,9,7]) (hyp[A\8]) (cut[B,C\2,0]) ("∀ elim"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END

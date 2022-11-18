@@ -1,0 +1,20 @@
+﻿CONJECTUREPANEL "Rachunek predykatów, prawa de Morgana klasycznie"
+PROOF "¬∀x.R(x) ⊢ ∃x.¬R(x)"
+INFER ¬∀x.R(x)
+     ⊢ ∃x.¬R(x)
+FORMULAE
+0 ⊥,
+1 ¬∀x.R(x),
+2 ∀x.R(x),
+3 ¬∃x.¬R(x),
+4 ∃x.¬R(x),
+5 actual i,
+6 ¬R(i),
+7 ¬R(x),
+8 i,
+9 x,
+10 R(i),
+11 R(x)
+IS
+SEQ ("contra (classical)"[A\4]) (cut[B,C\2,0]) ("∀ intro"[i,P,x\8,11,9]) ("contra (classical)"[A\10]) (cut[B,C\6,0]) (hyp[A\6]) (cut[B,C\4,0]) ("∃ intro"[P,i,x\7,8,9]) (hyp[A\6]) (hyp[A\5]) (cut[B,C\0,0]) ("¬ elim"[B\4]) (hyp[A\4]) (hyp[A\3]) (hyp[A\0]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END

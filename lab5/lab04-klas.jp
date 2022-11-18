@@ -1,0 +1,188 @@
+﻿CONJECTUREPANEL "Rachunek predykatów, klasycznie"
+PROOF "∀x.(R∨S(x)) ⊢ R∨∀x.S(x)"
+WHERE x NOTIN R 
+INFER ∀x.(R∨S(x))
+     ⊢ R∨∀x.S(x)
+FORMULAE
+0 ⊥,
+1 ¬(R∨∀x.S(x)),
+2 R∨∀x.S(x),
+3 ∀x.S(x),
+4 R,
+5 S(i),
+6 R∨S(i),
+7 actual i,
+8 ∀x.(R∨S(x)),
+9 R∨S(x),
+10 i,
+11 x,
+12 S(x),
+13 ¬(R∨∀x.S(x))
+IS
+SEQ ("contra (classical)"[A\2]) (cut[B,C\3,0]) ("∀ intro"[i,P,x\10,12,11]) (cut[B,C\6,5]) ("∀ elim"[P,i,x\9,10,11]) (hyp[A\8]) (hyp[A\7]) ("∨ elim"[A,B,C\4,5,5]) (hyp[A\6]) (cut[B,C\2,5]) (LAYOUT "∨ intro" (0) ("∨ intro(L)"[B,A\3,4]) (hyp[A\4])) (cut[B,C\0,5]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) ("contra (constructive)"[B\5]) (hyp[A\0]) (hyp[A\5]) (cut[B,C\2,0]) (LAYOUT "∨ intro" (0) ("∨ intro(R)"[B,A\4,3]) (hyp[A\3])) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, klasycznie"
+PROOF "actual j, ∃x.R(x)→∃y.S(y) ⊢ ∃y.∀x.(R(x)→S(y))"
+INFER actual j,
+     ∃x.R(x)→∃y.S(y)
+     ⊢ ∃y.∀x.(R(x)→S(y))
+FORMULAE
+0 ⊥,
+1 ¬∃y.∀x.(R(x)→S(y)),
+2 ∃y.∀x.(R(x)→S(y)),
+3 actual j,
+4 ∀x.(R(x)→S(j)),
+5 ∀x.(R(x)→S(y)),
+6 j,
+7 y,
+8 actual i1,
+9 ∀x.(R(x)→S(i1)),
+10 i1,
+11 S(i1),
+12 R(i2),
+13 i2,
+14 R(x)→S(i1),
+15 x,
+16 ∃y.S(y),
+17 S(y),
+18 ∃x.R(x),
+19 ∃x.R(x)→∃y.S(y),
+20 actual i,
+21 R(i),
+22 R(x),
+23 i,
+24 ¬(R(i)→S(j)),
+25 R(i)→S(j),
+26 S(j),
+27 ¬R(i),
+28 R(x)→S(j),
+29 actual i2 
+IS
+SEQ ("contra (classical)"[A\2]) (cut[B,C\4,0]) ("∀ intro"[i,P,x\23,28,15]) ("contra (classical)"[A\25]) (cut[B,C\21,0]) ("contra (classical)"[A\21]) (cut[B,C\25,0]) ("→ intro"[A,B\21,26]) (cut[B,C\0,26]) ("¬ elim"[B\21]) (hyp[A\21]) (hyp[A\27]) ("contra (constructive)"[B\26]) (hyp[A\0]) (cut[B,C\0,0]) ("¬ elim"[B\25]) (hyp[A\25]) (hyp[A\24]) (hyp[A\0]) (cut[B,C\18,0]) ("∃ intro"[P,i,x\22,23,15]) (hyp[A\21]) (hyp[A\20]) (cut[B,C\16,0]) ("→ elim"[A,B\18,16]) (hyp[A\19]) (hyp[A\18]) (cut[B,C\2,0]) ("∃ elim"[i,C,P,x\10,2,17,7]) (hyp[A\16]) (cut[B,C\9,2]) ("∀ intro"[i,P,x\13,14,15]) ("→ intro"[A,B\12,11]) (hyp[A\11]) ("∃ intro"[P,i,x\5,10,7]) (hyp[A\9]) (hyp[A\8]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, klasycznie"
+PROOF "actual j, ∀x.R(x)→S ⊢ ∃x.(R(x)→S)"
+WHERE x NOTIN S 
+INFER actual j,
+     ∀x.R(x)→S 
+     ⊢ ∃x.(R(x)→S)
+FORMULAE
+0 ⊥,
+1 ¬∃x.(R(x)→S),
+2 ∃x.(R(x)→S),
+3 actual j,
+4 R(j)→S,
+5 R(x)→S,
+6 j,
+7 x,
+8 S,
+9 ∀x.R(x),
+10 ∀x.R(x)→S,
+11 ¬∀x.R(x),
+12 actual i,
+13 R(i)→S,
+14 i,
+15 ¬R(i),
+16 R(i),
+17 R(x),
+18 R(j),
+19 ¬S,
+20 ¬(R(j)→S)
+IS
+SEQ ("contra (classical)"[A\2]) (cut[B,C\4,0]) ("→ intro"[A,B\18,8]) (cut[B,C\9,8]) ("contra (classical)"[A\9]) (cut[B,C\4,0]) ("contra (classical)"[A\4]) (cut[B,C\4,0]) ("→ intro"[A,B\18,8]) ("contra (classical)"[A\8]) (cut[B,C\9,0]) ("∀ intro"[i,P,x\14,17,7]) ("contra (classical)"[A\16]) (cut[B,C\13,0]) ("→ intro"[A,B\16,8]) (cut[B,C\0,8]) ("¬ elim"[B\16]) (hyp[A\16]) (hyp[A\15]) ("contra (constructive)"[B\8]) (hyp[A\0]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,14,7]) (hyp[A\13]) (hyp[A\12]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0]) (cut[B,C\0,0]) ("¬ elim"[B\9]) (hyp[A\9]) (hyp[A\11]) (hyp[A\0]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0]) (cut[B,C\8,8]) ("→ elim"[A,B\9,8]) (hyp[A\10]) (hyp[A\9]) (hyp[A\8]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, klasycznie"
+PROOF "actual j, ∀x.R(x)→∃x.S(x) ⊢ ∃x.(R(x)→S(x))"
+INFER actual j,
+     ∀x.R(x)→∃x.S(x)
+     ⊢ ∃x.(R(x)→S(x))
+FORMULAE
+0 ⊥,
+1 ¬∃x.(R(x)→S(x)),
+2 ∃x.(R(x)→S(x)),
+3 actual i,
+4 R(i)→S(i),
+5 R(x)→S(x),
+6 i,
+7 x,
+8 S(i),
+9 R(i),
+10 ∃x.S(x),
+11 S(x),
+12 ∀x.R(x),
+13 ∀x.R(x)→∃x.S(x),
+14 actual j,
+15 R(j)→S(j),
+16 j,
+17 ¬∀x.R(x),
+18 actual i1,
+19 R(i1)→S(i1),
+20 i1,
+21 S(i1),
+22 ¬R(i1),
+23 R(i1),
+24 R(x),
+25 S(j),
+26 R(j),
+27 ¬S(j)
+IS
+SEQ ("contra (classical)"[A\2]) (cut[B,C\12,0]) ("contra (classical)"[A\12]) (cut[B,C\15,0]) ("→ intro"[A,B\26,25]) ("contra (classical)"[A\25]) (cut[B,C\12,0]) ("∀ intro"[i,P,x\20,24,7]) ("contra (classical)"[A\23]) (cut[B,C\19,0]) ("→ intro"[A,B\23,21]) (cut[B,C\0,21]) ("¬ elim"[B\23]) (hyp[A\23]) (hyp[A\22]) ("contra (constructive)"[B\21]) (hyp[A\0]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,20,7]) (hyp[A\19]) (hyp[A\18]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0]) (cut[B,C\0,0]) ("¬ elim"[B\12]) (hyp[A\12]) (hyp[A\17]) (hyp[A\0]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,16,7]) (hyp[A\15]) (hyp[A\14]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0]) (cut[B,C\10,0]) ("→ elim"[A,B\12,10]) (hyp[A\13]) (hyp[A\12]) (cut[B,C\2,0]) ("∃ elim"[i,C,P,x\6,2,11,7]) (hyp[A\10]) (cut[B,C\4,2]) ("→ intro"[A,B\9,8]) (hyp[A\8]) ("∃ intro"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, klasycznie"
+PROOF "actual j, R→∃x.S(x) ⊢ ∃x.(R→S(x))"
+WHERE x NOTIN R 
+INFER actual j,
+     R→∃x.S(x)
+     ⊢ ∃x.(R→S(x))
+FORMULAE
+0 ⊥,
+1 ¬∃x.(R→S(x)),
+2 ∃x.(R→S(x)),
+3 actual i,
+4 R→S(i),
+5 R→S(x),
+6 i,
+7 x,
+8 S(i),
+9 R,
+10 ∃x.S(x),
+11 S(x),
+12 R→∃x.S(x),
+13 actual j,
+14 R→S(j),
+15 j,
+16 S(j),
+17 ¬R 
+IS
+SEQ ("contra (classical)"[A\2]) (cut[B,C\9,0]) ("contra (classical)"[A\9]) (cut[B,C\14,0]) ("→ intro"[A,B\9,16]) (cut[B,C\0,16]) ("¬ elim"[B\9]) (hyp[A\9]) (hyp[A\17]) ("contra (constructive)"[B\16]) (hyp[A\0]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,15,7]) (hyp[A\14]) (hyp[A\13]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0]) (cut[B,C\10,0]) ("→ elim"[A,B\9,10]) (hyp[A\12]) (hyp[A\9]) (cut[B,C\2,0]) ("∃ elim"[i,C,P,x\6,2,11,7]) (hyp[A\10]) (cut[B,C\4,2]) ("→ intro"[A,B\9,8]) (hyp[A\8]) ("∃ intro"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Rachunek predykatów, klasycznie"
+PROOF "∀x.(R(x)→∃y.S(y)) ⊢ ∀x.∃y.(R(x)→S(y))"
+INFER ∀x.(R(x)→∃y.S(y))
+     ⊢ ∀x.∃y.(R(x)→S(y))
+FORMULAE
+0 ⊥,
+1 ¬∃y.(R(i)→S(y)),
+2 ∃y.(R(i)→S(y)),
+3 actual i,
+4 R(i)→S(i),
+5 R(i)→S(y),
+6 i,
+7 y,
+8 ¬S(i),
+9 S(i),
+10 actual i1,
+11 R(i)→S(i1),
+12 i1,
+13 S(i1),
+14 R(i),
+15 ∃y.S(y),
+16 S(y),
+17 R(i)→∃y.S(y),
+18 ∀x.(R(x)→∃y.S(y)),
+19 R(x)→∃y.S(y),
+20 x,
+21 ∃y.(R(x)→S(y))
+IS
+SEQ ("∀ intro"[i,P,x\6,21,20]) (cut[B,C\17,2]) ("∀ elim"[P,i,x\19,6,20]) (hyp[A\18]) (hyp[A\3]) ("contra (classical)"[A\2]) (cut[B,C\4,0]) ("→ intro"[A,B\14,9]) (cut[B,C\15,9]) ("→ elim"[A,B\14,15]) (hyp[A\17]) (hyp[A\14]) ("contra (classical)"[A\9]) (cut[B,C\9,0]) ("∃ elim"[i,C,P,x\12,9,16,7]) (hyp[A\15]) (cut[B,C\11,9]) ("→ intro"[A,B\14,13]) (hyp[A\13]) (cut[B,C\2,9]) ("∃ intro"[P,i,x\5,12,7]) (hyp[A\11]) (hyp[A\10]) (cut[B,C\0,9]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) ("contra (constructive)"[B\9]) (hyp[A\0]) (cut[B,C\0,0]) ("¬ elim"[B\9]) (hyp[A\9]) (hyp[A\8]) (hyp[A\0]) (cut[B,C\2,0]) ("∃ intro"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
